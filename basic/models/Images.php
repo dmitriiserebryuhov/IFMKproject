@@ -4,7 +4,7 @@ namespace app\models;
 
 use yii\web\UploadedFile;
 
-class Image extends \yii\db\ActiveRecord
+class Images extends \yii\db\ActiveRecord
 {
     /**
      * @var UploadedFile
@@ -28,7 +28,7 @@ class Image extends \yii\db\ActiveRecord
         if ($this->validate()) {
             $this->link->saveAs($_SERVER['DOCUMENT_ROOT'].'/basic/upload/' .time()."_". $this->link->baseName . '.' . $this->link->extension);
             $this->link=time()."_".$this->link->baseName . '.' . $this->link->extension;
-            chmod($_SERVER['DOCUMENT_ROOT'].'/basic/upload/' .time()."_". $this->link->baseName . '.' . $this->link->extension,0755);
+            /*chmod($_SERVER['DOCUMENT_ROOT'].'/basic/upload/' .time()."_". $this->link->baseName . '.' . $this->link->extension,0755);*/
             return true;
         } else {
             return false;
