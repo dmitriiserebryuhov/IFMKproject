@@ -14,7 +14,7 @@ class ImageController extends Controller
         $query = Images::find();
 
         $pagination = new Pagination([
-            'defaultPageSize' => 1,
+            'defaultPageSize' => 2,
             'totalCount' => $query->count(),
         ]);
 
